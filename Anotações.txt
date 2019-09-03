@@ -1,0 +1,17 @@
+uniforme é um parâmetro global
+
+TRANSFORMAÇÕES
+Transformações são realizadas no shader
+slide 14 das transformações, o código final faz a transformação de "glm" para "mat4" que é a matriz qu é enviada para o vertex shader, conforme o slide 12 (envia pelo "matrix")
+
+TEXTURA
+Slide 5 
+GL_RGBA -> jpeg não tem o "A"(alpha)
+GL_BGRA_EXT -> passar GL_RGBA
+
+Slide 13
+8*sizeof(float), -> o quanto vai pular
+(void*)(3*sizeof(float) - > começa da posição 3
+
+2 vao, um para cada imagem
+Draw arrays desenha o fundo, draw arrays desenha o avião
