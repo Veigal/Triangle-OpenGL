@@ -45,3 +45,9 @@ Setar o parâmetro "GL_REPEAT" para a textura ser exibida várias vezes em sequ�
 SLIDE DE CAMERA 2D
 glm::ortho(0.0f, 800.0f, 600.0f, 0.0f, 0.1f, 100.0f); - Para ficarem coerentes as posições de tela e do OpenGL
 glViewport(0.0f, 0.0f, 800.0f, 600.0f); - Pixeis da tela
+
+
+Definir o tamanho da tela
+Criar a classe layer (textura, deslocamento)
+Fazer funcionar multiplas texturas
+Scroling das camadas
