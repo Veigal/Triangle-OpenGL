@@ -1,17 +1,47 @@
-uniforme È um par‚metro global
+uniforme √© um par√¢metro global
 
-TRANSFORMA«’ES
-TransformaÁıes s„o realizadas no shader
-slide 14 das transformaÁıes, o cÛdigo final faz a transformaÁ„o de "glm" para "mat4" que È a matriz qu È enviada para o vertex shader, conforme o slide 12 (envia pelo "matrix")
+TRANSFORMA√á√ïES
+Transforma√ß√µes s√£o realizadas no shader
+slide 14 das transforma√ß√µes, o c√≥digo final faz a transforma√ß√£o de "glm" para "mat4" que √© a matriz qu √© enviada para o vertex shader, conforme o slide 12 (envia pelo "matrix")
 
 TEXTURA
 Slide 5 
-GL_RGBA -> jpeg n„o tem o "A"(alpha)
+GL_RGBA -> jpeg n√£o tem o "A"(alpha)
 GL_BGRA_EXT -> passar GL_RGBA
 
 Slide 13
 8*sizeof(float), -> o quanto vai pular
-(void*)(3*sizeof(float) - > comeÁa da posiÁ„o 3
+(void*)(3*sizeof(float) - > come√ßa da posi√ß√£o 3
 
 2 vao, um para cada imagem
-Draw arrays desenha o fundo, draw arrays desenha o avi„o
+Draw arrays desenha o fundo, draw arrays desenha o avi√£o
+
+MAPEAMENTO DE TEXTURA ABORDAGEM PR√ÅTICA
+Um VAO para todas as camadas, s√≥ precisa trocar a textura o objeto que representa o tamanho da tela continua igual, desenar o mesmo objeto para todas as texturas
+
+glEnable(GL_DEPTH_TEST); - Testar a profundidade 
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); - Limpar o Buffer para desenhar corretamente as texturas
+
+
+glBindVertexArray(VAO);
+for (int i = 0; i < 4; i++) {
+    glUniform1f(
+ glGetUniformLocation(shader_programme, "offsetx"), layers[i]->offsetx);
+    glUniform1f(
+ glGetUniformLocation(shader_programme, "offsety"), layers[i]->offsety);
+    glUniform1f(
+ glGetUniformLocation(shader_programme, "layer_z"), layers[i]->z);
+    // bind Texture
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, layers[i]->tid);
+    glUniform1i(glGetUniformLocation(shader_programme, "sprite"), 0);
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+}
+
+Especifica o qu√£o mais vai ser somado em x e y e o ponto em z que vai ser desenhado conforme a "layer" (um array)
+
+Setar o par√¢metro "GL_REPEAT" para a textura ser exibida v√°rias vezes em sequ√™ncia
+
+SLIDE DE CAMERA 2D
+glm::ortho(0.0f, 800.0f, 600.0f, 0.0f, 0.1f, 100.0f); - Para ficarem coerentes as posi√ß√µes de tela e do OpenGL
+glViewport(0.0f, 0.0f, 800.0f, 600.0f); - Pixeis da tela
