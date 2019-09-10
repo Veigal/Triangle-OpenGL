@@ -48,6 +48,6 @@ glViewport(0.0f, 0.0f, 800.0f, 600.0f); - Pixeis da tela
 
 
 Definir o tamanho da tela
-Criar a classe layer (textura, deslocamento)
+Criar a classe layer (textura, deslocamento) - https://openlayers.org/en/latest/examples/layer-z-index.html
 Fazer funcionar multiplas texturas
 Scroling das camadas
