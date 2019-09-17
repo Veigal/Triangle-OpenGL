@@ -51,3 +51,8 @@ Definir o tamanho da tela
 Criar a classe layer (textura, deslocamento) - https://openlayers.org/en/latest/examples/layer-z-index.html
 Fazer funcionar multiplas texturas
 Scroling das camadas
+
+
+1 VAO por camada, criar dois triangulos
+
+(Game programming design patterns)
