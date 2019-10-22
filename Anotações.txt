@@ -60,3 +60,6 @@ Scroling das camadas
 Tilemap view duas heranças - slideview - diamond view - desenho, walking e map são as funções
 
 Função abstrata = virtual
+
+
+"tiled" software para criar os cenários.
