@@ -58,3 +58,5 @@ Scroling das camadas
 (Game programming design patterns)
 
 Tilemap view duas heranças - slideview - diamond view - desenho, walking e map são as funções
+
+Função abstrata = virtual
