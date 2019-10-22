@@ -56,3 +56,5 @@ Scroling das camadas
 1 VAO por camada, criar dois triangulos
 
 (Game programming design patterns)
+
+Tilemap view duas heranças - slideview - diamond view - desenho, walking e map são as funções
